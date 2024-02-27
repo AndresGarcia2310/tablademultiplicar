@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #display {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabla del 8</h1>
+    <label for="numero">Ingresa un número:</label>
+    <input type="number" id="numero" min="1" max="10">
+    <button onclick="tabladel8()">Tabla de multiplicar</button>
+
+    <div id="display"></div>
+
+    <script>
+        function tabladel8() {
+            var numero = document.getElementById("numero").value;
+
+            if (numero >= 1 && numero <= 10) {
+                var tablaHTML = "<h3>Tabla de Multiplicar del " + numero + "</h3><table>";
+                for (var i = 1; i <= 10; i++) {
+                    var resultado = numero * i;
+                    tablaHTML += "<tr><td>" + numero + " x " + i + "</td><td> = </td><td>" + resultado + "</td></tr>";
+                }
+                tablaHTML += "</table>";
+
+                document.getElementById("display").innerHTML = tablaHTML;
+            } else {
+                document.getElementById("display").innerHTML = "<p>Ingresa un número válido entre 1 y 10.</p>";
+            }
+        }
+    </script>
+
+</body>
+</html>
